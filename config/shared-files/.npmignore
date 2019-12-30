@@ -1,0 +1,5 @@
+/node_modules/
+/src/
+/__tests__/
+tsconfig.build.json
+babel.config.js

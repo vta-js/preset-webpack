@@ -1,0 +1,32 @@
+{
+  "name": "@vta/plugin-webpack",
+  "version": "1.0.0",
+  "description": "webpack plugin",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "engines": {
+    "node": ">= 10.16.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vta-js/preset-webpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vta-js/preset-webpack/issues"
+  },
+  "homepage": "https://github.com/vta-js/preset-webpack/blob/master/packages/plugin-webpack#readme",
+  "keywords": [],
+  "author": "vta@yhbit.net",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/runtime": "^7.7.7",
+    "core-js": "^3.0.0",
+    "webpack": "^5.0.0-0"
+  },
+  "peerDependencies": {
+    "vta": "^1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

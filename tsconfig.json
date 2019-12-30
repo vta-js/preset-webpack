@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.build.json",
+  "inclue": ["packages/**/*.ts"],
+  "exclude": ["node_modules", "packages/**/*.d.ts"],
+  "compilerOptions": {
+    "target": "ES2020",
+    "baseUrl": "./packages",
+    "paths": {
+      "@vta/*": ["*/src"]
+    }
+  }
+}

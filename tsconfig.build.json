@@ -1,0 +1,5 @@
+{
+  "extends": "@vta/plugin-typescript/tsconfig",
+  "exclude": ["node_modules"],
+  "compilerOptions": {}
+}

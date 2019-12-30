@@ -1,0 +1,11 @@
+**/node_modules/
+**/dist/
+**/coverage/
+*.temp.*
+!/packages/**/__snapshots__/dist/
+*-error.log
+/packages/**/__tests__/data/**/test-*
+/packages/*/.npmignore
+/packages/*/babel.config.js
+/packages/*/LICENSE
+/packages/*/tsconfig.build.json
