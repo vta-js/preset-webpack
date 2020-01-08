@@ -1,0 +1,11 @@
+{
+  "extends": "@vta/plugin-typescript/tsconfig",
+  "include": ["src/**/*.ts"],
+  "exclude": ["**/__tests__", "**/*.spec.ts"],
+  "compilerOptions": {
+    "baseUrl": "../../",
+    "paths": {
+      "tapable": ["node_modules/@types/tapable/index.d.ts"]
+    }
+  }
+}

@@ -1,1 +1,5 @@
-{ "extends": "@vta/plugin-typescript/tsconfig", "include": ["src/*.ts"] }
+{
+  "extends": "@vta/plugin-typescript/tsconfig",
+  "include": ["src/**/*.ts"],
+  "exclude": ["**/__tests__", "**/*.spec.ts"]
+}

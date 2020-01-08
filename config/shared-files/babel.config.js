@@ -13,7 +13,7 @@ module.exports = {
     ],
   ],
   plugins: [
-    ["@babel/plugin-transform-runtime", { corejs: false, version: "7.7.7" }],
+    ["@babel/plugin-transform-runtime", { corejs: false, version: "7.7.0" }],
     ["@babel/plugin-proposal-optional-chaining"],
   ],
 };
