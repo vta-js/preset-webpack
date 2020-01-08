@@ -1,0 +1,28 @@
+.container {
+  margin: 0 auto;
+  min-width: 380px;
+  max-width: 560px;
+}
+
+.hello.images,
+.hotMusic,
+.txtDownloader,
+.asyncLoader {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 16px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  .flexNoGrow {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+  .flexGrow {
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+}

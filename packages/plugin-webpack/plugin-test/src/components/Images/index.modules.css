@@ -1,0 +1,19 @@
+.imgContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.webpackImg {
+  flex-basis: 200px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.notFoundImg {
+  flex-basis: 160px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 128px;
+  background: url(../../assets/404.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+}
