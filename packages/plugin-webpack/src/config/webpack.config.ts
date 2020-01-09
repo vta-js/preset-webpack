@@ -36,8 +36,8 @@ export default useDeps<[AppConfig, PathsConfig, EnvConfig, ExtensionsConfig]>(
       entry: pathsConfig.entry,
       output: {
         path: pathsConfig.build,
-        filename: "bundles/js/[name]-[hash:8].js",
-        chunkFilename: "bundles/js/[id]-[contenthash:8].js",
+        filename: "bundles/js/[name]-[hash:12].js",
+        chunkFilename: "bundles/js/chunk-[id]-[contenthash:12].js",
         publicPath: appConfig.publicPath,
       },
       resolve: {
@@ -100,8 +100,8 @@ export default useDeps<[AppConfig, PathsConfig, EnvConfig, ExtensionsConfig]>(
         isDev
           ? undefined
           : new MiniCssExtractPlugin({
-              filename: "bundles/css/[name]-[contenthash:8].css",
-              chunkFilename: "bundles/css/[id]-[contenthash:8].css",
+              filename: "bundles/css/[name]-[contenthash:12].css",
+              chunkFilename: "bundles/css/chunk-[id]-[contenthash:12].css",
             }),
       ].filter(plugin => plugin),
       optimization: isDev

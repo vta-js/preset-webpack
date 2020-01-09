@@ -5,7 +5,7 @@ export default function useUrlLoader(): Loader {
     loader: require.resolve("url-loader"),
     options: {
       limit: 10240,
-      name: "bundles/media/[name]-[contenthash:8].[ext]",
+      name: "bundles/media/[name]-[contenthash:12].[ext]",
     },
   };
 }
