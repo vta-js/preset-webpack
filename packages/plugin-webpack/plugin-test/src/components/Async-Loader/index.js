@@ -1,5 +1,3 @@
-import "./index.css";
-
 export default function AsyncLoader(rende) {
   rende(
     '<button id="async_loader_btn">load modules</button>&nbsp;&nbsp;&nbsp;<label id="async_loader_recorder"></label>',

@@ -1,4 +1,5 @@
 import delay from "../../utils/delay";
+import "./index.css";
 
 export default async function Recorder(rende) {
   let idx = 0;
