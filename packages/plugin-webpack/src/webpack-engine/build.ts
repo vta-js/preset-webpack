@@ -7,11 +7,13 @@ import StatsPrintor from "./utils/Stats-Printor";
 import printBuildInstructions from "./utils/print-build-instructions";
 import askConfirm from "./utils/ask-confirm";
 import copyPublicFiles from "./utils/copy-public-files";
+import openDirectory from "./utils/open-directory";
 
 export default async function build(
   config: Configuration,
   serverConfig: ServerConfiguration,
   buildDir: string,
+  autoOpen: boolean,
   silent?: boolean,
 ): Promise<void> {
   fse.emptyDirSync(buildDir);
@@ -33,6 +35,9 @@ export default async function build(
     compiler.run(err => {
       if (!err) {
         resolve();
+        if (autoOpen !== false) {
+          openDirectory(buildDir);
+        }
       } else {
         reject(err);
       }

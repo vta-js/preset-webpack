@@ -14,11 +14,18 @@ export declare interface FeatureOptions {
   registExtension(category: ExtCategory, extension: string | string[]): void;
 }
 
+export declare interface Options {
+  autoOpen?: boolean;
+}
+
 /* eslint-disable class-methods-use-this */
 export default class WebpackPlugin extends Plugin {
-  constructor() {
+  constructor(options: Options = {}) {
     super("@vta/plugin-webpack");
+    this.options = options;
   }
+
+  private options: Options;
 
   private extensions = new Map<ExtCategory, string[]>();
 
@@ -44,7 +51,9 @@ export default class WebpackPlugin extends Plugin {
       registExtension: this.registExtension.bind(this),
     });
     helpers.registPlugin(
-      process.env.NODE_ENV === "development" ? new WebpackDevPlugin() : new WebpackBuildPlugin(),
+      process.env.NODE_ENV === "development"
+        ? new WebpackDevPlugin()
+        : new WebpackBuildPlugin(this.options.autoOpen),
       true,
     );
   }
