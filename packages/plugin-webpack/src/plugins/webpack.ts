@@ -1,5 +1,5 @@
 import path from "path";
-import { Plugin, App, PrepareHelpers } from "vta";
+import { Plugin, App, PrepareHelpers, FsWatcherToRestartPlugin } from "vta";
 import WebpackDevPlugin from "./webpack-dev";
 import WebpackBuildPlugin from "./webpack-build";
 import injectWebpack from "../config/inject/webpack.inject";
@@ -71,5 +71,10 @@ export default class WebpackPlugin extends Plugin {
     app.hooks.config.itemUserDone("paths", () => injectPaths(app.cwd));
     app.hooks.config.itemUserDone("webpack", () => injectWebpack());
     app.hooks.config.itemUserDone("webpack-server", () => injectWebpackServer(app.cwd));
+
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    app.hooks.run.tap(this.name, (worker: any) => {
+      FsWatcherToRestartPlugin.watchFile(require.resolve(worker.resolveConfig("paths").theme), app);
+    });
   }
 }
