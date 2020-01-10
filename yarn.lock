@@ -1182,9 +1182,9 @@
     "@types/node" "*"
 
 "@types/http-proxy@*":
-  version "1.17.2"
-  resolved "https://registry.npm.taobao.org/@types/http-proxy/download/@types/http-proxy-1.17.2.tgz#3b7fb5365a00d47129967b0b2da51c2123692314"
-  integrity sha1-O3+1NloA1HEplnsLLaUcISNpIxQ=
+  version "1.17.3"
+  resolved "https://registry.npm.taobao.org/@types/http-proxy/download/@types/http-proxy-1.17.3.tgz#348e1b808ff9585423cb909e9992d89ccdbf4c14"
+  integrity sha1-NI4bgI/5WFQjy5CemZLYnM2/TBQ=
   dependencies:
     "@types/node" "*"
 
@@ -1239,9 +1239,9 @@
   integrity sha1-PcoOPzOyAPx9ETnAzZbBJoyt/Z0=
 
 "@types/node@*", "@types/node@^13.0.0":
-  version "13.1.4"
-  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-13.1.4.tgz#4cfd90175a200ee9b02bd6b1cd19bc349741607e"
-  integrity sha1-TP2QF1ogDumwK9axzRm8NJdBYH4=
+  version "13.1.6"
+  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-13.1.6.tgz#076028d0b0400be8105b89a0a55550c86684ffec"
+  integrity sha1-B2Ao0LBAC+gQW4mgpVVQyGaE/+w=
 
 "@types/node@^12.0.2":
   version "12.12.24"
@@ -1348,9 +1348,9 @@
   integrity sha1-xWOqGS85NQodGNo2xajaOCu9gig=
 
 "@types/yargs@^13.0.0":
-  version "13.0.4"
-  resolved "https://registry.npm.taobao.org/@types/yargs/download/@types/yargs-13.0.4.tgz#53d231cebe1a540e7e13727fc1f0d13ad4a9ba3b"
-  integrity sha1-U9Ixzr4aVA5+E3J/wfDROtSpujs=
+  version "13.0.5"
+  resolved "https://registry.npm.taobao.org/@types/yargs/download/@types/yargs-13.0.5.tgz#18121bfd39dc12f280cee58f92c5b21d32041908"
+  integrity sha1-GBIb/TncEvKAzuWPksWyHTIEGQg=
   dependencies:
     "@types/yargs-parser" "*"
 
@@ -1448,18 +1448,18 @@
     fs-extra "^8.0.0"
 
 "@vta/plugin-monorepo-builder-tsc@^1.0.0":
-  version "1.0.4"
-  resolved "https://registry.npm.taobao.org/@vta/plugin-monorepo-builder-tsc/download/@vta/plugin-monorepo-builder-tsc-1.0.4.tgz#2ea6b9dbb56efd94c535ae18c8c5667363170156"
-  integrity sha1-Lqa527Vu/ZTFNa4YyMVmc2MXAVY=
+  version "1.0.5"
+  resolved "https://registry.npm.taobao.org/@vta/plugin-monorepo-builder-tsc/download/@vta/plugin-monorepo-builder-tsc-1.0.5.tgz#5ed9394c4459b1b7e8c82c6d25e752c26b1aa066"
+  integrity sha1-Xtk5TERZsbfoyCxtJedSwmsaoGY=
   dependencies:
     "@babel/runtime" "^7.7.0"
     "@vta/tsc" "^1.1.0"
     core-js "^3.0.0"
 
 "@vta/plugin-monorepo@^1.0.0":
-  version "1.0.4"
-  resolved "https://registry.npm.taobao.org/@vta/plugin-monorepo/download/@vta/plugin-monorepo-1.0.4.tgz#887faf1371d56d148d34ae9e8e19a08d859bb8eb"
-  integrity sha1-iH+vE3HVbRSNNK6ejhmgjYWbuOs=
+  version "1.0.5"
+  resolved "https://registry.npm.taobao.org/@vta/plugin-monorepo/download/@vta/plugin-monorepo-1.0.5.tgz#95ea6d1aef76132f0dff478c0ac51cb9d5949f03"
+  integrity sha1-leptGu92Ey8N/0eMCsUcudWUnwM=
   dependencies:
     "@babel/runtime" "^7.7.0"
     "@vta/helpers" "^1.0.4"
@@ -1468,9 +1468,9 @@
     fs-extra "^8.0.0"
 
 "@vta/plugin-typescript@^1.0.0":
-  version "1.0.4"
-  resolved "https://registry.npm.taobao.org/@vta/plugin-typescript/download/@vta/plugin-typescript-1.0.4.tgz#2fb4f7217b16a0ade255308a13e4fc899a5025e2"
-  integrity sha1-L7T3IXsWoK3iVTCKE+T8iZpQJeI=
+  version "1.0.5"
+  resolved "https://registry.npm.taobao.org/@vta/plugin-typescript/download/@vta/plugin-typescript-1.0.5.tgz#c1181ef2c6c64277d3d5d090df73a1ea14cdfc8a"
+  integrity sha1-wRge8sbGQnfT1dCQ33Oh6hTN/Io=
   dependencies:
     "@babel/runtime" "^7.7.0"
     "@vta/config" "^1.0.4"
@@ -2501,9 +2501,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001012, caniuse-lite@^1.0.30001017:
-  version "1.0.30001019"
-  resolved "https://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30001019.tgz#857e3fccaad2b2feb3f1f6d8a8f62d747ea648e1"
-  integrity sha1-hX4/zKrSsv6z8fbYqPYtdH6mSOE=
+  version "1.0.30001020"
+  resolved "https://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30001020.tgz#3f04c1737500ffda78be9beb0b5c1e2070e15926"
+  integrity sha1-PwTBc3UA/9p4vpvrC1weIHDhWSY=
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -3627,9 +3627,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.322:
-  version "1.3.328"
-  resolved "https://registry.npm.taobao.org/electron-to-chromium/download/electron-to-chromium-1.3.328.tgz#a619575c42f1d5b443103664f25ffa5a80190ee5"
-  integrity sha1-phlXXELx1bRDEDZk8l/6WoAZDuU=
+  version "1.3.330"
+  resolved "https://registry.npm.taobao.org/electron-to-chromium/download/electron-to-chromium-1.3.330.tgz#c288aeb89fa2c15879c29f81a4362374132387fb"
+  integrity sha1-woiuuJ+iwVh5wp+BpDYjdBMjh/s=
 
 elegant-spinner@^1.0.1:
   version "1.0.1"
@@ -3974,9 +3974,9 @@ eventemitter3@^4.0.0:
   integrity sha1-1lF2FjiH7lnzhtZMgmELaWpKdOs=
 
 events@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npm.taobao.org/events/download/events-3.0.0.tgz#9a0a0dfaf62893d92b875b8f2698ca4114973e88"
-  integrity sha1-mgoN+vYok9krh1uPJpjKQRSXPog=
+  version "3.1.0"
+  resolved "https://registry.npm.taobao.org/events/download/events-3.1.0.tgz#84279af1b34cb75aa88bf5ff291f6d0bd9b31a59"
+  integrity sha1-hCea8bNMt1qoi/X/KR9tC9mzGlk=
 
 eventsource@^1.0.7:
   version "1.0.7"
@@ -4658,9 +4658,9 @@ handle-thing@^2.0.0:
   integrity sha1-DgOWlf9QyT/CiFV9aW88HcZ3Z1Q=
 
 handlebars@^4.1.2:
-  version "4.5.3"
-  resolved "https://registry.npm.taobao.org/handlebars/download/handlebars-4.5.3.tgz#5cf75bd8714f7605713511a56be7c349becb0482"
-  integrity sha1-XPdb2HFPdgVxNRGla+fDSb7LBII=
+  version "4.6.0"
+  resolved "https://registry.npm.taobao.org/handlebars/download/handlebars-4.6.0.tgz#33af6c3eda930d7a924f5d8f1c6d8edc3180512e"
+  integrity sha1-M69sPtqTDXqST12PHG2O3DGAUS4=
   dependencies:
     neo-async "^2.6.0"
     optimist "^0.6.1"
@@ -4936,9 +4936,9 @@ https-browserify@^1.0.0:
   integrity sha1-7AbBDgo0wPL68Zn3/X/Hj//QPHM=
 
 husky@^4.0.0:
-  version "4.0.1"
-  resolved "https://registry.npm.taobao.org/husky/download/husky-4.0.1.tgz#b0d9e16e660ec352392b3c2164ba709694d86b4d"
-  integrity sha1-sNnhbmYOw1I5KzwhZLpwlpTYa00=
+  version "4.0.6"
+  resolved "https://registry.npm.taobao.org/husky/download/husky-4.0.6.tgz#b64206220ab940f091cb5f1c75672453eb39fc9f"
+  integrity sha1-tkIGIgq5QPCRy18cdWckU+s5/J8=
   dependencies:
     chalk "^3.0.0"
     ci-info "^2.0.0"
@@ -6855,9 +6855,9 @@ node-pre-gyp@*:
     tar "^4.4.2"
 
 node-releases@^1.1.44:
-  version "1.1.44"
-  resolved "https://registry.npm.taobao.org/node-releases/download/node-releases-1.1.44.tgz#cd66438a6eb875e3eb012b6a12e48d9f4326ffd7"
-  integrity sha1-zWZDim64dePrAStqEuSNn0Mm/9c=
+  version "1.1.45"
+  resolved "https://registry.npm.taobao.org/node-releases/download/node-releases-1.1.45.tgz#4cf7e9175d71b1317f15ffd68ce63bce1d53e9f2"
+  integrity sha1-TPfpF11xsTF/Ff/WjOY7zh1T6fI=
   dependencies:
     semver "^6.3.0"
 
@@ -9616,9 +9616,9 @@ terser-webpack-plugin@^1.4.3:
     worker-farm "^1.7.0"
 
 terser-webpack-plugin@^2.3.0:
-  version "2.3.1"
-  resolved "https://registry.npm.taobao.org/terser-webpack-plugin/download/terser-webpack-plugin-2.3.1.tgz#6a63c27debc15b25ffd2588562ee2eeabdcab923"
-  integrity sha1-amPCfevBWyX/0liFYu4u6r3KuSM=
+  version "2.3.2"
+  resolved "https://registry.npm.taobao.org/terser-webpack-plugin/download/terser-webpack-plugin-2.3.2.tgz#6d3d1b0590c8f729bfbaeb7fb2528b8b62db4c74"
+  integrity sha1-bT0bBZDI9ym/uut/slKLi2LbTHQ=
   dependencies:
     cacache "^13.0.1"
     find-cache-dir "^3.2.0"
@@ -9630,9 +9630,9 @@ terser-webpack-plugin@^2.3.0:
     webpack-sources "^1.4.3"
 
 terser@^4.1.2, terser@^4.3.9, terser@^4.4.3:
-  version "4.6.1"
-  resolved "https://registry.npm.taobao.org/terser/download/terser-4.6.1.tgz#913e35e0d38a75285a7913ba01d753c4089ebdbd"
-  integrity sha1-kT414NOKdShaeRO6AddTxAievb0=
+  version "4.6.2"
+  resolved "https://registry.npm.taobao.org/terser/download/terser-4.6.2.tgz#cb1cf055e7f70caa5863f00ba3e67dc3c97b5150"
+  integrity sha1-yxzwVef3DKpYY/ALo+Z9w8l7UVA=
   dependencies:
     commander "^2.20.0"
     source-map "~0.6.1"
@@ -10094,9 +10094,9 @@ vm-browserify@^1.0.1:
   integrity sha1-eGQcSIuObKkadfUR56OzKobl3aA=
 
 vta@^1.0.0:
-  version "1.0.4"
-  resolved "https://registry.npm.taobao.org/vta/download/vta-1.0.4.tgz#5bc3b8f66289a8b920a3f4013461de9e929be5cd"
-  integrity sha1-W8O49mKJqLkgo/QBNGHenpKb5c0=
+  version "1.0.5"
+  resolved "https://registry.npm.taobao.org/vta/download/vta-1.0.5.tgz#c050e48dab842b7c3fd560dba9880c70f69e0a89"
+  integrity sha1-wFDkjauEK3w/1WDbqYgMcPaeCok=
   dependencies:
     "@babel/runtime" "^7.7.0"
     "@vta/config" "^1.0.4"

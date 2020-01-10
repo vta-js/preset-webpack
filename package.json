@@ -61,6 +61,8 @@
     "bootstrap": "lerna bootstrap --force-local",
     "dep-upgrade": "rimraf yarn.lock && lerna bootstrap --force-local",
     "build": "vta build --env build",
+    "test:start:webpack": "vta start --cwd ./packages/plugin-webpack/__tests__/data/project/project-01",
+    "test:build:webpack": "vta build --cwd ./packages/plugin-webpack/__tests__/data/project/project-01",
     "npm-publish": "vta build --env publish",
     "format": "prettier --write \"**/*.*\""
   },
