@@ -1,7 +1,12 @@
 import chalk from "chalk";
 import { Plugin, App } from "vta";
 import webpackDev from "../webpack-engine/dev";
-import askConfirm from "../webpack-engine/utils/ask-confirm";
+// import askConfirm from "../webpack-engine/utils/ask-confirm";
+
+/* when run from package.json's script, now always exit due to npm or yarn implements */
+function askConfirm(message: string): Promise<boolean> {
+  return Promise.resolve(!!message);
+}
 
 /* eslint-disable class-methods-use-this */
 export default class WebpackDevPlugin extends Plugin {
