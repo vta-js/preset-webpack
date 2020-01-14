@@ -81,8 +81,7 @@ export default class WebpackPlugin extends Plugin {
     app.hooks.config.itemUserDone("webpack", () => injectWebpack());
     app.hooks.config.itemUserDone("webpack-server", () => injectWebpackServer(app.cwd));
 
-    /* eslint-disable @typescript-eslint/no-explicit-any */
-    app.hooks.run.tap(this.name, (worker: any) => {
+    app.hooks.run.tap(this.name, worker => {
       FsWatcherToRestartPlugin.watchFile(require.resolve(worker.resolveConfig("paths").theme), app);
     });
   }

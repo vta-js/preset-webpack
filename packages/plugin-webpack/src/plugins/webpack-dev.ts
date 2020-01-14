@@ -4,7 +4,6 @@ import webpackDev from "../webpack-engine/dev";
 import askConfirm from "../webpack-engine/utils/ask-confirm";
 
 /* eslint-disable class-methods-use-this */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 export default class WebpackDevPlugin extends Plugin {
   constructor() {
     super("@vta/plugin-webpack/dev");
@@ -12,7 +11,7 @@ export default class WebpackDevPlugin extends Plugin {
 
   apply(app: App) {
     let closeServer: () => Promise<void>;
-    app.hooks.run.tapPromise(this.name, (worker: any) => {
+    app.hooks.run.tapPromise(this.name, worker => {
       return webpackDev(
         worker.resolveConfig("webpack"),
         worker.resolveConfig("webpack-server"),
