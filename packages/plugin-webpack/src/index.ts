@@ -1,4 +1,5 @@
 export { default } from "./plugins/webpack";
+export { default as addEntries } from "./utils/add-entries";
 export { default as buildExtensionsRegexp } from "./utils/build-extensions-regexp";
 export { default as normalizeExtension } from "./utils/normalize-extension";
 export { default as useBabelLoader } from "./utils/use-babel-loader";
