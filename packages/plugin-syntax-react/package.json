@@ -1,0 +1,42 @@
+{
+  "name": "@vta/plugin-react",
+  "version": "1.0.0",
+  "description": "react plugin",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "engines": {
+    "node": ">= 10.16.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vta-js/preset-webpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vta-js/preset-webpack/issues"
+  },
+  "homepage": "https://github.com/vta-js/preset-webpack/blob/master/packages/plugin-react#readme",
+  "keywords": [],
+  "author": "vta@yhbit.net",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/plugin-transform-react-constant-elements": "^7.8.0",
+    "@babel/preset-react": "^7.8.0",
+    "@babel/runtime": "^7.8.0",
+    "@vta/config": "^1.0.0",
+    "core-js": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/prop-types": "^15.7.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "peerDependencies": {
+    "vta": "^1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
