@@ -13,7 +13,7 @@ export default function injectWebpackConfig() {
         const rules = [];
         if (process.env.NODE_ENV === "development") {
           rules.push({
-            test: buildExtensionsRegexp(extensions.eslint),
+            test: buildExtensionsRegexp(extensions["eslint-loader"]),
             include: pathsConfig.src,
             enforce: "pre",
             loader: require.resolve("eslint-loader"),

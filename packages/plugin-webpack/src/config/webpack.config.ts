@@ -41,12 +41,12 @@ export default useDeps<[AppConfig, PathsConfig, EnvConfig, ExtensionsConfig]>(
         publicPath: appConfig.publicPath,
       },
       resolve: {
-        extensions: extensions.default.map(ext => normalizeExtension(ext)),
+        extensions: extensions["webpack-resolve"].map(ext => normalizeExtension(ext)),
       },
       module: {
         rules: [
           {
-            test: buildExtensionsRegexp(extensions.babel),
+            test: buildExtensionsRegexp(extensions["babel-loader"]),
             include: pathsConfig.babel.include,
             exclude: pathsConfig.babel.exclude,
             use: [useBabelLoader()],
@@ -86,7 +86,7 @@ export default useDeps<[AppConfig, PathsConfig, EnvConfig, ExtensionsConfig]>(
             ],
           },
           {
-            test: buildExtensionsRegexp([".png", ".jpg", ".jpeg", ".gif", ".bmp", ".svg"]),
+            test: buildExtensionsRegexp(extensions["url-loader"]),
             use: [useUrlLoader()],
           },
         ],

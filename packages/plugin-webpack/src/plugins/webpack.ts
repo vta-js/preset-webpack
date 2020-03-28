@@ -1,5 +1,6 @@
 import path from "path";
 import { Plugin, App, PrepareHelpers, FsWatcherToRestartPlugin } from "vta";
+import PluginWebpackExtensionsResolver from "@vta/plugin-webpack-extensions-resolver";
 import WebpackDevPlugin from "./webpack-dev";
 import WebpackBuildPlugin from "./webpack-build";
 import injectWebpack from "../config/inject/webpack.inject";
@@ -7,12 +8,6 @@ import injectWebpackServer from "../config/inject/webpack-server.inject";
 import injectPaths from "../config/inject/paths.inject";
 import injectApp from "../config/inject/app.inject";
 import { ExtensionsConfig } from "../config/extensions.config";
-
-export declare type ExtCategory = keyof ExtensionsConfig;
-
-export declare interface FeatureOptions {
-  registExtension(category: ExtCategory, extension: string | string[]): void;
-}
 
 export declare interface Options {
   autoOpen?: boolean;
@@ -27,29 +22,9 @@ export default class WebpackPlugin extends Plugin {
 
   private options: Options;
 
-  private extensions = new Map<ExtCategory, string[]>();
-
-  private registExtension(category: ExtCategory, extension: string | string[]) {
-    if (!this.extensions.has(category)) {
-      this.extensions.set(category, []);
-    }
-    if (typeof extension === "string") {
-      this.extensions.get(category).push(extension);
-    }
-    if (Array.isArray(extension)) {
-      extension.forEach(ext => {
-        this.extensions.get(category).push(ext);
-      });
-    }
-  }
-
   prepare(helpers: PrepareHelpers) {
-    this.registExtension("default", "js");
-    this.registExtension("eslint", "js");
-    this.registExtension("babel", ["js"]);
-    helpers.registFeature<FeatureOptions>("webpack", {
-      registExtension: this.registExtension.bind(this),
-    });
+    helpers.registFeature("webpack");
+    helpers.registPlugin(new PluginWebpackExtensionsResolver());
     helpers.registPlugin(
       process.env.NODE_ENV === "development"
         ? new WebpackDevPlugin()
@@ -64,10 +39,12 @@ export default class WebpackPlugin extends Plugin {
     });
     app.hooks.config.itemBaseStart("extensions", () => {
       return {
-        default: this.extensions.get("default"),
-        babel: this.extensions.get("babel"),
-        eslint: this.extensions.get("eslint"),
-        typescript: this.extensions.get("typescript"),
+        "webpack-resolve": PluginWebpackExtensionsResolver.getResolver(app).resolve(
+          "webpack-resolve",
+        ),
+        "babel-loader": PluginWebpackExtensionsResolver.getResolver(app).resolve("babel-loader"),
+        "eslint-loader": PluginWebpackExtensionsResolver.getResolver(app).resolve("eslint-loader"),
+        "url-loader": PluginWebpackExtensionsResolver.getResolver(app).resolve("url-loader"),
       } as ExtensionsConfig;
     });
     app.hooks.config.itemBaseStart("app", () => ({ cwd: app.cwd }));

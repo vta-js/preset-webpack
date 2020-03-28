@@ -1,8 +1,8 @@
 export declare interface ExtensionsConfig {
-  default: string[];
-  eslint: string[];
-  babel: string[];
-  typescript: string[];
+  "webpack-resolve": string[];
+  "eslint-loader": string[];
+  "babel-loader": string[];
+  "url-loader": string[];
 }
 
 export default {};
