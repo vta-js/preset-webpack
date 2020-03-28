@@ -12,8 +12,5 @@ module.exports = {
       },
     ],
   ],
-  plugins: [
-    ["@babel/plugin-transform-runtime", { corejs: false, version: "7.7.0" }],
-    ["@babel/plugin-proposal-optional-chaining"],
-  ],
+  plugins: [["@babel/plugin-transform-runtime", { corejs: false, version: "7.8.0" }]],
 };
