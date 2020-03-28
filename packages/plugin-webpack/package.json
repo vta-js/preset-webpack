@@ -38,7 +38,7 @@
     "eslint-loader": "^3.0.0",
     "file-loader": "^5.0.2",
     "fs-extra": "^8.0.0",
-    "html-webpack-plugin": "^4.0.0-0",
+    "html-webpack-plugin": "^4.0.3",
     "inquirer": "^7.0.2",
     "less": "^3.10.0",
     "less-loader": "^5.0.0",
