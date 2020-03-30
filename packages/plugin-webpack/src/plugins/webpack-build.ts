@@ -6,10 +6,10 @@ import webpackBuild from "../webpack-engine/build";
 export default class WebpackBuildPlugin extends Plugin {
   constructor(autoOpen = true) {
     super("@vta/plugin-webpack/build");
-    this.autoOpen = autoOpen;
+    this.#autoOpen = autoOpen;
   }
 
-  private autoOpen: boolean;
+  #autoOpen: boolean;
 
   apply(app: App) {
     app.hooks.run.tapPromise(this.name, (worker) => {
@@ -17,7 +17,7 @@ export default class WebpackBuildPlugin extends Plugin {
         worker.resolveConfig("webpack"),
         worker.resolveConfig("webpack-server"),
         path.resolve(app.cwd, app.config.dirs.build),
-        this.autoOpen,
+        this.#autoOpen,
         app.silent,
       );
     });

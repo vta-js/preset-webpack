@@ -17,10 +17,10 @@ export declare interface Options {
 export default class WebpackPlugin extends Plugin {
   constructor(options: Options = {}) {
     super("@vta/plugin-webpack");
-    this.options = options;
+    this.#options = options;
   }
 
-  private options: Options;
+  #options: Options;
 
   prepare(helpers: PrepareHelpers) {
     helpers.registFeature("webpack");
@@ -28,7 +28,7 @@ export default class WebpackPlugin extends Plugin {
     helpers.registPlugin(
       process.env.NODE_ENV === "development"
         ? new WebpackDevPlugin()
-        : new WebpackBuildPlugin(this.options.autoOpen),
+        : new WebpackBuildPlugin(this.#options.autoOpen),
       true,
     );
   }

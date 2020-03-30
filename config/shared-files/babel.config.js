@@ -12,5 +12,8 @@ module.exports = {
       },
     ],
   ],
-  plugins: [["@babel/plugin-transform-runtime", { corejs: false, version: "7.8.0" }]],
+  plugins: [
+    ["@babel/plugin-transform-runtime", { corejs: false, version: "7.8.0" }],
+    ["@babel/plugin-proposal-class-properties"],
+  ],
 };

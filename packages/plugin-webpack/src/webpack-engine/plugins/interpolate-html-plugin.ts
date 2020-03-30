@@ -8,10 +8,10 @@ export declare interface Replacement {
 
 export default class InterpolateHtmlPlugin {
   constructor(replacements: Replacement) {
-    this.replacements = replacements;
+    this.#replacements = replacements;
   }
 
-  private replacements: Replacement;
+  #replacements: Replacement;
 
   apply(compiler: Compiler) {
     compiler.hooks.compilation.tap("InterpolateHtmlPlugin", (compilation) => {
@@ -19,8 +19,8 @@ export default class InterpolateHtmlPlugin {
         .getHooks(compilation)
         .afterTemplateExecution.tap("InterpolateHtmlPlugin", (data) => {
           let { html } = data;
-          Object.keys(this.replacements).forEach((key) => {
-            const value = this.replacements[key];
+          Object.keys(this.#replacements).forEach((key) => {
+            const value = this.#replacements[key];
             /* eslint-disable no-param-reassign */
             html = html.replace(new RegExp(`%${escapeStringRegexp(key)}%`, "g"), value.toString());
           });

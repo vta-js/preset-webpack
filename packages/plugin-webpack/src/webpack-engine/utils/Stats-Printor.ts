@@ -7,16 +7,16 @@ const isDev = process.env.NODE_ENV === "development";
 
 export default class StatsPrintor {
   constructor(printInstruction: () => void, silent?: boolean) {
-    this.printInstruction = printInstruction;
-    this.silent = silent;
+    this.#printInstruction = printInstruction;
+    this.#silent = silent;
   }
 
-  private printInstruction: () => void;
+  #printInstruction: () => void;
 
-  private silent: boolean;
+  #silent: boolean;
 
   print(stats: Stats) {
-    if (this.silent) return;
+    if (this.#silent) return;
 
     clearConsole();
 
@@ -40,13 +40,13 @@ export default class StatsPrintor {
     } else {
       console.log(chalk.green("Compiled successfully!"));
     }
-    if (typeof this.printInstruction === "function") {
-      this.printInstruction();
+    if (typeof this.#printInstruction === "function") {
+      this.#printInstruction();
     }
   }
 
   printCompiling() {
-    if (this.silent) return;
+    if (this.#silent) return;
 
     clearConsole();
 

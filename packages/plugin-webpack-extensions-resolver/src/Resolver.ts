@@ -14,21 +14,21 @@ declare interface Features {
 
 export default class WebpackExtensionsResolver {
   constructor(app: App) {
-    this.features = {
+    this.#features = {
       Typescript: !!app.getFeature("typescript"),
       React: !!app.getFeature("React"),
     };
   }
 
-  private features: Features;
+  #features: Features;
 
-  private extensions = new Map<ExtCategory, string[]>();
+  #extensions = new Map<ExtCategory, string[]>();
 
   regist(category: ExtCategory, extension: string | string[]): void {
-    if (!this.extensions.has(category)) {
-      this.extensions.set(category, []);
+    if (!this.#extensions.has(category)) {
+      this.#extensions.set(category, []);
     }
-    const registedExtensions = this.extensions.get(category);
+    const registedExtensions = this.#extensions.get(category);
     (Array.isArray(extension) ? extension : [extension]).forEach((ext) => {
       if (typeof ext === "string") {
         registedExtensions.push(ext);
@@ -37,79 +37,79 @@ export default class WebpackExtensionsResolver {
   }
 
   resolve(category: ExtCategory): string[] {
-    const extensions = this.getBuiltInExtensions(category);
-    if (this.extensions.has(category)) {
-      this.extensions.get(category).forEach((ext) => {
+    const extensions = this.#getBuiltInExtensions(category);
+    if (this.#extensions.has(category)) {
+      this.#extensions.get(category).forEach((ext) => {
         extensions.push(ext);
       });
     }
     return extensions;
   }
 
-  private getBuiltInExtensions(category: ExtCategory): string[] {
+  #getBuiltInExtensions = (category: ExtCategory): string[] => {
     switch (category) {
       case "webpack-resolve":
-        return this.resolveWebpackResolve();
+        return this.#resolveWebpackResolve();
       case "babel-loader":
-        return this.resolveBabelLoader();
+        return this.#resolveBabelLoader();
       case "eslint-loader":
-        return this.resolveEslintLoader();
+        return this.#resolveEslintLoader();
       case "url-loader":
-        return this.resolveUrlLoader();
+        return this.#resolveUrlLoader();
       case "ts-loader":
-        return this.resolveTsLoader();
+        return this.#resolveTsLoader();
       default:
         return [];
     }
-  }
+  };
 
-  private resolveWebpackResolve(): string[] {
+  #resolveWebpackResolve = (): string[] => {
     const extensions = ["js"];
-    if (this.features.Typescript) {
+    if (this.#features.Typescript) {
       extensions.push("ts");
     }
-    if (this.features.React) {
+    if (this.#features.React) {
       extensions.push("jsx");
-      if (this.features.Typescript) {
+      if (this.#features.Typescript) {
         extensions.push("tsx");
       }
     }
     return extensions;
-  }
+  };
 
-  private resolveBabelLoader(): string[] {
+  #resolveBabelLoader = (): string[] => {
     const extensions = ["js"];
-    if (this.features.React) {
+    if (this.#features.React) {
       extensions.push("jsx");
     }
     return extensions;
-  }
+  };
 
-  private resolveEslintLoader(): string[] {
+  #resolveEslintLoader = (): string[] => {
     const extensions = ["js"];
-    if (this.features.Typescript) {
+    if (this.#features.Typescript) {
       extensions.push("ts");
     }
-    if (this.features.React) {
+    if (this.#features.React) {
       extensions.push("jsx");
-      if (this.features.Typescript) {
+      if (this.#features.Typescript) {
         extensions.push("tsx");
       }
     }
     return extensions;
-  }
+  };
 
-  private resolveTsLoader(): string[] {
+  #resolveTsLoader = (): string[] => {
     const extensions = ["ts"];
-    if (this.features.React) {
+    if (this.#features.React) {
       extensions.push("tsx");
     }
     return extensions;
-  }
+  };
 
   /* eslint-disable class-methods-use-this */
-  private resolveUrlLoader(): string[] {
+  #resolveUrlLoader = (): string[] => {
     const extensions = ["png", "jpg", "jpeg", "gif", "bmp", "svg"];
     return extensions;
-  }
+  };
 }
