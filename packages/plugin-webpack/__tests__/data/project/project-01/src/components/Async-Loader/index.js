@@ -5,7 +5,7 @@ export default function AsyncLoader(rende) {
 
   document.getElementById("async_loader_btn").addEventListener("click", () => {
     import("./Recorder").then(({ default: Recorder }) => {
-      Recorder(html => {
+      Recorder((html) => {
         document.getElementById("async_loader_recorder").innerHTML = html;
       });
     });

@@ -12,7 +12,7 @@ export default class WebpackBuildPlugin extends Plugin {
   private autoOpen: boolean;
 
   apply(app: App) {
-    app.hooks.run.tapPromise(this.name, worker => {
+    app.hooks.run.tapPromise(this.name, (worker) => {
       return webpackBuild(
         worker.resolveConfig("webpack"),
         worker.resolveConfig("webpack-server"),

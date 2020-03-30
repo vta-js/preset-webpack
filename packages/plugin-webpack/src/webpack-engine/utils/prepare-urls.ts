@@ -2,7 +2,7 @@ import url from "url";
 import address from "address";
 
 export default function prepareUrls(protocol, host, port): { local: string; lan?: string } {
-  const formatUrl = hostname =>
+  const formatUrl = (hostname) =>
     url.format({
       protocol,
       hostname,

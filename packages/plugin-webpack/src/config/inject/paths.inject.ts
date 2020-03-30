@@ -9,9 +9,9 @@ function injectPath(path: Path, cwd: string): Path {
     return resolve(cwd, path);
   }
   if (Array.isArray(path)) {
-    return path.map(p => injectPath(p, cwd));
+    return path.map((p) => injectPath(p, cwd));
   }
-  Object.keys(path).forEach(key => {
+  Object.keys(path).forEach((key) => {
     /* eslint-disable no-param-reassign */
     path[key] = injectPath(path[key], cwd);
   });
@@ -19,7 +19,7 @@ function injectPath(path: Path, cwd: string): Path {
 }
 
 export default function injectPathsConfig(cwd: string) {
-  return useBase(config => {
+  return useBase((config) => {
     return injectPath(config, cwd) as unknown;
   });
 }

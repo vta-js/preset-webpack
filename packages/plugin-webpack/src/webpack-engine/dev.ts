@@ -48,7 +48,7 @@ export default async function dev(
 
   return {
     close() {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         server.close(() => {
           resolve();
         });

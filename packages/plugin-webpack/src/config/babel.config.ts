@@ -9,7 +9,7 @@ export declare interface BabelConfig {
 
 /* eslint-disable global-require */
 export default useBase(({ cwd }) =>
-  useDeps<AppConfig, BabelConfig>("app", appConfig => {
+  useDeps<AppConfig, BabelConfig>("app", (appConfig) => {
     const runtime = resolveBabelRuntime(cwd);
     return {
       presets: [
@@ -34,7 +34,7 @@ export default useBase(({ cwd }) =>
               },
             ]
           : undefined,
-      ].filter(plugin => plugin),
+      ].filter((plugin) => plugin),
     } as BabelConfig;
   }),
 );

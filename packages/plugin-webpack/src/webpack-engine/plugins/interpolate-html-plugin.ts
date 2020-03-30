@@ -14,12 +14,12 @@ export default class InterpolateHtmlPlugin {
   private replacements: Replacement;
 
   apply(compiler: Compiler) {
-    compiler.hooks.compilation.tap("InterpolateHtmlPlugin", compilation => {
+    compiler.hooks.compilation.tap("InterpolateHtmlPlugin", (compilation) => {
       (HtmlWebpackPlugin as { getHooks?(com: typeof compilation): Hooks })
         .getHooks(compilation)
-        .afterTemplateExecution.tap("InterpolateHtmlPlugin", data => {
+        .afterTemplateExecution.tap("InterpolateHtmlPlugin", (data) => {
           let { html } = data;
-          Object.keys(this.replacements).forEach(key => {
+          Object.keys(this.replacements).forEach((key) => {
             const value = this.replacements[key];
             /* eslint-disable no-param-reassign */
             html = html.replace(new RegExp(`%${escapeStringRegexp(key)}%`, "g"), value.toString());

@@ -16,7 +16,7 @@ export default class WebpackDevPlugin extends Plugin {
 
   apply(app: App) {
     let closeServer: () => Promise<void>;
-    app.hooks.run.tapPromise(this.name, worker => {
+    app.hooks.run.tapPromise(this.name, (worker) => {
       return webpackDev(
         worker.resolveConfig("webpack"),
         worker.resolveConfig("webpack-server"),
@@ -24,10 +24,10 @@ export default class WebpackDevPlugin extends Plugin {
         app.silent,
       ).then(({ close }) => {
         closeServer = close;
-        return new Promise(resolve => {
+        return new Promise((resolve) => {
           process.on("SIGINT", () => {
             askConfirm(chalk.yellow("Would you want to stop the webpack dev server?")).then(
-              confirmed => {
+              (confirmed) => {
                 if (confirmed) {
                   closeServer().then(() => {
                     resolve();

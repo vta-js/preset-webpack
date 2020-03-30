@@ -9,7 +9,7 @@ export default function injectWebpackConfig() {
   return useDeps<[ExtensionsConfig, PathsConfig]>(
     ["extensions", "paths"],
     ([extensions, pathsConfig]) =>
-      useBase<WebpackConfig>(config => {
+      useBase<WebpackConfig>((config) => {
         const rules = [];
         if (process.env.NODE_ENV === "development") {
           rules.push({

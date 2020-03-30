@@ -41,7 +41,7 @@ export default useDeps<[AppConfig, PathsConfig, EnvConfig, ExtensionsConfig]>(
         publicPath: appConfig.publicPath,
       },
       resolve: {
-        extensions: extensions["webpack-resolve"].map(ext => normalizeExtension(ext)),
+        extensions: extensions["webpack-resolve"].map((ext) => normalizeExtension(ext)),
       },
       module: {
         rules: [
@@ -103,7 +103,7 @@ export default useDeps<[AppConfig, PathsConfig, EnvConfig, ExtensionsConfig]>(
               filename: "bundles/css/[name]-[contenthash:12].css",
               chunkFilename: "bundles/css/chunk-[id]-[contenthash:12].css",
             }),
-      ].filter(plugin => plugin),
+      ].filter((plugin) => plugin),
       optimization: isDev
         ? undefined
         : {

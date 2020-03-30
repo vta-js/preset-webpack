@@ -7,7 +7,7 @@ export default function askAnswer(message: string): Promise<boolean> {
     name: "confirmed",
     message,
     default: true,
-  }).then(answer => {
+  }).then((answer) => {
     if (answer.confirmed) {
       return true;
     }

@@ -8,7 +8,7 @@ export interface PostcssConfig {
   plugins(): any[];
 }
 
-export default useDeps<AppConfig, PostcssConfig>("app", appConfig => ({
+export default useDeps<AppConfig, PostcssConfig>("app", (appConfig) => ({
   ident: "postcss",
   plugins: () => [
     postcssPresetEnv({

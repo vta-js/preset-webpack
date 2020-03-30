@@ -5,7 +5,7 @@ export declare interface EnvConfig {
   [key: string]: string | number | boolean;
 }
 
-export default useDeps<AppConfig, EnvConfig>("app", appConfig => {
+export default useDeps<AppConfig, EnvConfig>("app", (appConfig) => {
   return {
     "process.env.NODE_ENV": process.env.NODE_ENV || "development",
     "process.env.VTA_ENV": process.env.VTA_ENV || "development",

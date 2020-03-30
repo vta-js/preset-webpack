@@ -6,7 +6,7 @@ module.exports = {
       "@vta/monorepo",
       {
         filesToCopy: ["LICENSE"].concat(
-          [".npmignore", "babel.config.js", "tsconfig.build.json"].map(file => ({
+          [".npmignore", "babel.config.js", "tsconfig.build.json"].map((file) => ({
             src: `./config/shared-files/${file}`,
             dest: file,
           })),

@@ -21,7 +21,7 @@ export default function choosePort(
       if (process.stdout.isTTY) {
         return askConfirm(
           chalk.yellow(`${message}\n\nWould you like to run the app on another port instead?`),
-        ).then(confirmed => {
+        ).then((confirmed) => {
           if (confirmed) {
             return port;
           }
@@ -34,7 +34,7 @@ export default function choosePort(
       }
       return undefined;
     },
-    err => {
+    (err) => {
       if (!silent) {
         clearConsole();
         console.log(chalk.red(`Could not find an open port at ${chalk.bold(host)}`));

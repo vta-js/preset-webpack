@@ -32,7 +32,7 @@ export default async function build(
   await copyPublicFiles(serverConfig.contentBase as string[], buildDir);
 
   await new Promise((resolve, reject) => {
-    compiler.run(err => {
+    compiler.run((err) => {
       if (!err) {
         resolve();
         if (autoOpen !== false) {
@@ -44,7 +44,7 @@ export default async function build(
     });
 
     process.on("SIGINT", () => {
-      askConfirm(chalk.yellow("Would you want to stop the webpack building?")).then(confirmed => {
+      askConfirm(chalk.yellow("Would you want to stop the webpack building?")).then((confirmed) => {
         if (confirmed) {
           reject(new Error(`webpack building stopped by signal ${chalk.yellow("SIGINT")}`));
         }

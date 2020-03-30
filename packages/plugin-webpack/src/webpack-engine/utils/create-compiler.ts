@@ -13,7 +13,7 @@ export default function createCompiler(
         statsPrintor.printCompiling();
       });
 
-      compiler.hooks.done.tap("done", stats => {
+      compiler.hooks.done.tap("done", (stats) => {
         statsPrintor.print(stats);
       });
 

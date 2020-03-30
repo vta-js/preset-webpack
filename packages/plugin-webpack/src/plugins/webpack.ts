@@ -34,7 +34,7 @@ export default class WebpackPlugin extends Plugin {
   }
 
   apply(app: App) {
-    app.hooks.config.init(registDir => {
+    app.hooks.config.init((registDir) => {
       registDir(path.resolve(__dirname, "../config"));
     });
     app.hooks.config.itemBaseStart("extensions", () => {
@@ -58,7 +58,7 @@ export default class WebpackPlugin extends Plugin {
     app.hooks.config.itemUserDone("webpack", () => injectWebpack());
     app.hooks.config.itemUserDone("webpack-server", () => injectWebpackServer(app.cwd));
 
-    app.hooks.run.tap(this.name, worker => {
+    app.hooks.run.tap(this.name, (worker) => {
       FsWatcherToRestartPlugin.watchFile(require.resolve(worker.resolveConfig("paths").theme), app);
     });
   }

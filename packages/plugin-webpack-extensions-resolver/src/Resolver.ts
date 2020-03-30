@@ -29,7 +29,7 @@ export default class WebpackExtensionsResolver {
       this.extensions.set(category, []);
     }
     const registedExtensions = this.extensions.get(category);
-    (Array.isArray(extension) ? extension : [extension]).forEach(ext => {
+    (Array.isArray(extension) ? extension : [extension]).forEach((ext) => {
       if (typeof ext === "string") {
         registedExtensions.push(ext);
       }
@@ -39,7 +39,7 @@ export default class WebpackExtensionsResolver {
   resolve(category: ExtCategory): string[] {
     const extensions = this.getBuiltInExtensions(category);
     if (this.extensions.has(category)) {
-      this.extensions.get(category).forEach(ext => {
+      this.extensions.get(category).forEach((ext) => {
         extensions.push(ext);
       });
     }

@@ -5,18 +5,18 @@ import { PathsConfig } from "../paths.config";
 
 export default function injectWebpackServerConfig(cwd: string) {
   return useDeps("paths", (pathsConfig: PathsConfig) =>
-    useBase<WebpackServerConfig>(serverConfig => {
+    useBase<WebpackServerConfig>((serverConfig) => {
       const contentBase: string[] = [];
       if (typeof serverConfig.contentBase === "string") {
         contentBase.push(path.resolve(cwd, serverConfig.contentBase));
       }
       if (Array.isArray(serverConfig.contentBase)) {
-        serverConfig.contentBase.forEach(dir => {
+        serverConfig.contentBase.forEach((dir) => {
           contentBase.push(dir);
         });
       }
 
-      pathsConfig.public.forEach(dir => {
+      pathsConfig.public.forEach((dir) => {
         contentBase.push(dir);
       });
 

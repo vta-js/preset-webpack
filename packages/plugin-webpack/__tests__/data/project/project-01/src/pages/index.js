@@ -19,20 +19,20 @@ export default function App(rende) {
   </div>
   `);
 
-  Hello(html => {
+  Hello((html) => {
     document.querySelector(`.${styles.hello}`).innerHTML = html;
   });
 
-  Images(html => {
+  Images((html) => {
     document.querySelector(`.${styles.images}`).innerHTML = html;
   });
-  HotMusic(html => {
+  HotMusic((html) => {
     document.querySelector(`.${styles.hotMusic}`).innerHTML = html;
   });
-  TxtDownloader(html => {
+  TxtDownloader((html) => {
     document.querySelector(`.${styles.txtDownloader}`).innerHTML = html;
   });
-  AsyncLoader(html => {
+  AsyncLoader((html) => {
     document.querySelector(`.${styles.asyncLoader}`).innerHTML = html;
   });
 }
