@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
+    "@types/react-dom": "^16.9.6",
     "@types/prop-types": "^15.7.2",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
