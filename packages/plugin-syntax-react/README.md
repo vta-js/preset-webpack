@@ -1,5 +1,5 @@
-# @vta/plugin-react
+# @vta/plugin-syntax-react
 
-a react plugin for [vta](https://github.com/vta-js/vta)
+add React support for vta [vta](https://github.com/vta-js/vta)
 
-![npm](https://img.shields.io/npm/v/@vta/plugin-react) [![Build Status](https://travis-ci.com/vta-js/preset-webpack.svg?branch=master)](https://travis-ci.com/vta-js/preset-webpack)
+![npm](https://img.shields.io/npm/v/@vta/plugin-syntax-react) [![Build Status](https://travis-ci.com/vta-js/preset-webpack.svg?branch=master)](https://travis-ci.com/vta-js/preset-webpack)
