@@ -1,0 +1,5 @@
+{
+  "root": true,
+  "extends": "@vta/eslint-config",
+  "rules": { "import/no-extraneous-dependencies": "off" }
+}

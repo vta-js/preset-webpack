@@ -1,0 +1,1 @@
+{ "plugins": [["@vta/webpack"], ["@vta/webpack-react"], ["../../../dist"]] }

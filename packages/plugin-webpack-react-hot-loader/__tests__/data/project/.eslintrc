@@ -1,0 +1,13 @@
+{
+  "root": true,
+  "extends": ["@vta/eslint-config-react"],
+  "rules": {
+    "import/no-extraneous-dependencies": "off",
+    "import/no-unresolved": [
+      "error",
+      {
+        "ignore": ["@vta/react-test"]
+      }
+    ]
+  }
+}
