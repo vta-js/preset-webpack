@@ -39,6 +39,7 @@ export default class WebpackPlugin extends Plugin {
     });
     app.hooks.config.itemBaseStart("extensions", () => {
       return {
+        entry: PluginWebpackExtensionsResolver.getResolver(app).resolve("entry")[0],
         "webpack-resolve": PluginWebpackExtensionsResolver.getResolver(app).resolve(
           "webpack-resolve",
         ),

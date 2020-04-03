@@ -1,4 +1,5 @@
-import { useBase } from "@vta/config";
+import { useBase, useDeps } from "@vta/config";
+import type { ExtensionsConfig } from "./extensions.config";
 
 export declare interface PathsConfig {
   entry?: string;
@@ -11,14 +12,16 @@ export declare interface PathsConfig {
   babel: { include: string[]; exclude: string[] };
 }
 
-export default useBase<PathsConfig>(({ src }) => ({
-  entry: `${src}/index.js`,
-  public: ["public"],
-  html: "public/index.html",
-  theme: "theme",
-  lessPaths: ["node_modules"],
-  babel: {
-    include: [src],
-    exclude: [],
-  },
-}));
+export default useDeps<ExtensionsConfig>("extensions", (extensions) =>
+  useBase<PathsConfig>(({ src }) => ({
+    entry: `${src}/index.${extensions.entry}`,
+    public: ["public"],
+    html: "public/index.html",
+    theme: "theme",
+    lessPaths: ["node_modules"],
+    babel: {
+      include: [src],
+      exclude: [],
+    },
+  })),
+);

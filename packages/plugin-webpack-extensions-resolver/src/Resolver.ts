@@ -1,6 +1,7 @@
 import { App } from "vta";
 
 export declare type ExtCategory =
+  | "entry"
   | "webpack-resolve"
   | "babel-loader"
   | "eslint-loader"
@@ -16,7 +17,7 @@ export default class WebpackExtensionsResolver {
   constructor(app: App) {
     this.#features = {
       Typescript: !!app.getFeature("typescript"),
-      React: !!app.getFeature("React"),
+      React: !!app.getFeature("react"),
     };
   }
 
@@ -48,6 +49,8 @@ export default class WebpackExtensionsResolver {
 
   #getBuiltInExtensions = (category: ExtCategory): string[] => {
     switch (category) {
+      case "entry":
+        return this.#resolveEntry();
       case "webpack-resolve":
         return this.#resolveWebpackResolve();
       case "babel-loader":
@@ -61,6 +64,16 @@ export default class WebpackExtensionsResolver {
       default:
         return [];
     }
+  };
+
+  #resolveEntry = (): string[] => {
+    if (this.#features.React) {
+      if (this.#features.Typescript) {
+        return ["tsx"];
+      }
+      return ["jsx"];
+    }
+    return ["js"];
   };
 
   #resolveWebpackResolve = (): string[] => {
