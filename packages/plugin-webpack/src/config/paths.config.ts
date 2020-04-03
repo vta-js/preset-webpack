@@ -10,6 +10,7 @@ export declare interface PathsConfig {
   theme?: string;
   lessPaths?: string[];
   babel: { include: string[]; exclude: string[] };
+  sources: string[];
 }
 
 export default useDeps<ExtensionsConfig>("extensions", (extensions) =>
@@ -23,5 +24,6 @@ export default useDeps<ExtensionsConfig>("extensions", (extensions) =>
       include: [src],
       exclude: [],
     },
+    sources: [src],
   })),
 );

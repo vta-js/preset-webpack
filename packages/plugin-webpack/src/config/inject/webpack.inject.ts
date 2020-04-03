@@ -21,7 +21,7 @@ export default function injectWebpackConfig() {
         }
         rules.push({
           oneOf: config.module.rules.concat([
-            { include: [pathsConfig.src], use: [useFileLoader()] },
+            { include: pathsConfig.sources, use: [useFileLoader()] },
           ]),
         });
         return {
