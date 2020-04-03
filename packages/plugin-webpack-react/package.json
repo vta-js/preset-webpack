@@ -1,0 +1,40 @@
+{
+  "name": "@vta/plugin-webpack-react",
+  "version": "1.0.0",
+  "description": "add react support for webpack plugin of vta",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "engines": {
+    "node": ">= 10.16.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vta-js/preset-webpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vta-js/preset-webpack/issues"
+  },
+  "homepage": "https://github.com/vta-js/preset-webpack/blob/master/packages/plugin-webpack#readme",
+  "keywords": [],
+  "author": "vta@yhbit.net",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/runtime": "^7.8.0",
+    "@vta/config": "^1.0.0",
+    "@vta/helpers": "^1.0.0",
+    "@vta/plugin-syntax-react": "^1.0.0",
+    "core-js": "^3.6.0"
+  },
+  "devDependencies": {
+    "@vta/plugin-webpack": "^1.0.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "peerDependencies": {
+    "@vta/plugin-webpack": "^1.0.0",
+    "vta": "^1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

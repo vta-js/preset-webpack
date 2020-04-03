@@ -1,0 +1,8 @@
+{
+  "name": "@vta/plugin-webpack-react-test",
+  "version": "1.0.0",
+  "dependencies": {
+    "@babel/runtime": "^7.8.0",
+    "core-js": "^3.6.0"
+  }
+}

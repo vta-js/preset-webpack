@@ -1,0 +1,1 @@
+{ "plugins": [["@vta/webpack"], ["../../../dist"]] }
