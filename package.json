@@ -39,7 +39,7 @@
     "@types/node": "^13.0.0",
     "@vta/eslint-config-react": "^1.0.0",
     "@vta/eslint-config-typescript": "^1.0.0",
-    "@vta/format-npm-yarn-lock": "^1.0.0",
+    "@vta/format-npm-yarn-lock": "^1.0.10",
     "@vta/plugin-monorepo": "^1.0.0",
     "@vta/plugin-monorepo-builder-tsc": "^1.0.0",
     "@vta/plugin-typescript": "^1.0.0",
