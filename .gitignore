@@ -9,4 +9,3 @@
 /packages/*/babel.config.js
 /packages/*/LICENSE
 /packages/*/tsconfig.build.json
-!/packages/plugin-webpack/tsconfig.build.json
